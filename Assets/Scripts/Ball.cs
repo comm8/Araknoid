@@ -10,6 +10,10 @@ public class Ball : MonoBehaviour
     [SerializeField] private float Speed = 100.0f;
     [SerializeField] public TextMeshPro text; 
     [SerializeField] private int score = 0;
+    [SerializeField] private bool gameover = false;
+
+    [SerializeField] private TextMeshPro GameOverText;
+    [SerializeField] private GameObject[] GameOverDeleteList;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,4 +67,19 @@ public class Ball : MonoBehaviour
     return (ballPos.x - racketPos.x) / racketWidth;
 }
 }
+
+private void FixedUpdate()
+{
+
+if(transform.position.y < -200.0f)
+{
+     Debug.Log(transform.position.y);
+     GameOverText.color = new Color(255,0,0);
+    // for(i=0. i <  i++)
+
+
 }
+
+}
+}
+
