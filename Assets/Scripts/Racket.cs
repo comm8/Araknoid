@@ -5,7 +5,14 @@ public class Racket : MonoBehaviour
  {
 
     public float speed = 150;
+    public Transform Cam;
+    public Vector3 offset;
     //Movement Speed
+
+private void Update() {
+   Cam.position = Vector3.Lerp(Cam.position, this.transform.position + offset, 0.2f * Time.deltaTime);
+}
+
 
     void FixedUpdate()
     {
